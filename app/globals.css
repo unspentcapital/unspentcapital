@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Default Theme: Unspent Capital (Orange Accents) */ :root {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #1e2a386e;
+  --color-text-heading: #F0F4F8;
+  --color-text-body: #bcc6cf;
+  --color-text-on-accent: #050D14; /* For text on bright accent backgrounds like buttons */
+  --color-accent-primary: #F28C35; /* Dusky Orange - Main CTAs, active states */
+  --color-accent-primary-hover: #FAA352; /* Lighter Dusky Orange */
+  --color-accent-secondary: #f28d35e2; /* Deep Amber - Secondary links, highlights, borders */
+  --color-accent-secondary-hover: #FBC56D; /* Lighter Deep Amber */
+}
+
+/* Spent Capital Theme (Purple Accents) */
+.theme-spent {
+  --color-accent-primary: #9b59b6; /* Purple */
+  --color-accent-primary-hover: #8e44ad; /* Darker Purple */
+  --color-accent-secondary: #af7ac5; /* Lighter Purple */
+  --color-accent-secondary-hover: #c39bd3; /* Even Lighter Purple */
+  /* You can override other variables like --color-text-heading if needed for this theme */
+}
+
+/* Apply a base background and text color to the body */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-body); /* Default text color */
+  @apply font-sans; /* Retain existing font-sans application */
+}
+
+/* General button styling can remain or be removed if components handle it more specifically */
+/* button {
+  @apply px-4 py-2 rounded-lg transition-all;
+}
+
+button:hover {
+  @apply opacity-80;
+} */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 40s linear infinite;
+}
+
+/* Add this to globals.css */
+.shadow-subtle {
+  box-shadow: 0 2px 5px rgba(6, 3, 0, 0.437);
+}
+
