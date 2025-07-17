@@ -390,7 +390,7 @@ export default function Home() {
           scrolling="no"
         ></iframe>
         <p className="text-unspent-text-secondary text-sm mt-3 text-center leading-relaxed">
-          We first published our thesis on why Bitcoin is a safe haven on <a href="https://www.linkedin.com/pulse/bitcoin-safe-haven-james-viggiano/\" target="_blank" rel="noopener noreferrer" className="underline text-unspent-accent-secondary hover:text-unspent-accent-secondary-hover">March 12, 2020</a>. Over five years later, with Bitcoin’s market cap rising from $143 billion to over $2 trillion, that thesis has been validated—making Unspent Capital one of the top-performing saving strategies of the period.
+          We first published our thesis on why Bitcoin is a safe haven on <a href="https://x.com/jamesviggy/status/1237854624456925184" target="_blank" rel="noopener noreferrer" className="underline text-unspent-accent-secondary hover:text-unspent-accent-secondary-hover">March 12, 2020</a>. Over five years later, with Bitcoin’s market cap rising from $143 billion to over $2 trillion, that thesis has been validated—making Unspent Capital one of the top-performing saving strategies of the period.
         </p>
       </div>
 
