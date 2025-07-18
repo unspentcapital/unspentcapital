@@ -293,7 +293,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
 
 // --- Helper Functions for Styling ---
 const getTabViewButtonClasses = (isActive: boolean): string =>
-  `px-6 py-3 rounded-lg transition-all font-semibold text-lg ${ // Needs full theming
+  `px-4 py-2 sm:px-6 sm:py-3 rounded-lg transition-all font-semibold text-base sm:text-lg ${ // Needs full theming
     isActive ? "bg-unspent-accent-primary text-unspent-text-on-accent shadow-lg" : "bg-unspent-bg-primary text-unspent-text-body hover:bg-unspent-bg-secondary"
   }`;
 
@@ -326,7 +326,8 @@ export default function Home() {
           Exploring the philosophy of Unspent Capital and showcasing projects built with Spent Capital.
         </p>
 
-        <div className="sticky top-0 z-10 mb-10 flex flex-wrap justify-center items-center gap-4 border-b border-unspent-bg-secondary p-2 rounded-b-lg"> {/* Removed background and shadow for transparency */}
+        <div className="sticky top-0 z-10 mb-10 flex flex-row flex-wrap justify-center items-center gap-2 sm:gap-4 border-b border-unspent-bg-secondary p-2 rounded-b-lg">
+
           <button
             className={getTabViewButtonClasses(view === VIEW_UNSPENT)}
             onClick={() => setView(VIEW_UNSPENT)}
