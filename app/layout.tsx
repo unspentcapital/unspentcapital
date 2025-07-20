@@ -14,8 +14,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://unspent.capital"), // Make sure to use your actual domain
   title: "Unspent Capital",
   description: "Exploring the philosophy of Bitcoin as unspent capital and showcasing projects built with spent capital.",
+  openGraph: {
+    title: "Unspent Capital",
+    description: "Exploring the philosophy of Bitcoin as unspent capital and showcasing projects built with spent capital.",
+    images: [
+      {
+        url: "/og-image.png", // Path to your image in the `public` folder
+        width: 1200,
+        height: 630,
+        alt: "Unspent Capital",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Unspent Capital",
+    description: "Exploring the philosophy of Bitcoin as unspent capital and showcasing projects built with spent capital.",
+    images: ["/og-image.png"], // Path to your image in the `public` folder
+  },
 };
 
 export default function RootLayout({
