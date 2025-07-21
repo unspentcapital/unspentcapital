@@ -234,12 +234,17 @@ const projectsData: Project[] = [
 // --- Child Components ---
 interface JourneyStepItemProps {
   step: JourneyStep;
-  index: number; // Add index to identify the step number
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-const JourneyStepItem: React.FC<JourneyStepItemProps> = ({ step, index }) => (
-  <details className="p-4 bg-unspent-bg-secondary rounded-lg shadow-md border-l-4 border-unspent-accent-primary mb-4 group text-unspent-text-body"> {/* Added text-unspent-text-body for default text */}
-    <summary className="text-xl font-bold text-unspent-accent-secondary cursor-pointer flex justify-between items-center list-none group">
+const JourneyStepItem: React.FC<JourneyStepItemProps> = ({ step, index, isOpen, onToggle }) => (
+  <div className="p-4 bg-unspent-bg-secondary rounded-lg shadow-md border-l-4 border-unspent-accent-primary mb-4 text-unspent-text-body">
+    <div
+      className="text-xl font-bold text-unspent-accent-secondary cursor-pointer flex justify-between items-center"
+      onClick={onToggle}
+    >
       <div className="flex items-center flex-grow">
         <span className="mr-3 sm:mr-4 bg-unspent-bg-primary text-unspent-accent-primary rounded-full w-8 h-8 flex items-center justify-center text-sm font-semibold ring-1 ring-unspent-accent-primary flex-shrink-0">
           {index + 1}
@@ -247,25 +252,30 @@ const JourneyStepItem: React.FC<JourneyStepItemProps> = ({ step, index }) => (
         <span className="flex-grow">{step.title}</span>
       </div>
       <div className="flex items-center ml-2 sm:ml-4 flex-shrink-0">
-        <span className="transform transition-transform duration-200 group-open:rotate-90 mr-2 sm:mr-3">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-unspent-accent-secondary"><path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        <span className={`transform transition-transform duration-200 ${isOpen ? 'rotate-90' : ''} mr-2 sm:mr-3`}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-unspent-accent-secondary">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </span>
-
         <a
           href={step.href}
           className="text-sm text-unspent-text-on-accent bg-unspent-accent-primary hover:bg-unspent-accent-primary-hover px-2 sm:px-3 py-1 sm:py-1.5 rounded-md font-medium transition-colors whitespace-nowrap"
           target="_blank"
           rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()} // Prevent details toggle when link is clicked
+          onClick={(e) => e.stopPropagation()} // Prevent collapse on link click
         >
           Read More &rarr;
         </a>
       </div>
-    </summary>
-    <div className="mt-3 pt-3 border-t border-unspent-bg-primary/50 text-unspent-text-secondary"> {/* Changed border color and text color */}
-      <p className="whitespace-pre-line">{step.body}</p>
     </div>
-  </details>
+    {isOpen && (
+      <div className="mt-3 pt-3 border-t border-unspent-bg-primary/50 text-unspent-text-secondary">
+        <p className="whitespace-pre-line">{step.body}</p>
+      </div>
+    )}
+  </div>
 );
 
 interface ProjectCardProps {
@@ -307,6 +317,7 @@ const getTagFilterButtonClasses = (isActive: boolean): string =>
 export default function Home() {
   const [view, setView] = useState<string>(VIEW_UNSPENT);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+const [openStepIndex, setOpenStepIndex] = useState<number | null>(0); // or `null` for all collapsed by default
 
   const uniqueTags = Array.from(new Set(projectsData.flatMap((p) => p.tags)));
 
@@ -398,8 +409,14 @@ export default function Home() {
       <div className="text-left">
         <h2 className="text-2xl font-semibold mb-4 text-unspent-accent-primary">Bitcoin Journey</h2>
         {journeyStepsData.map((step, i) => (
-          <JourneyStepItem key={i} step={step} index={i} />
-        ))}
+  <JourneyStepItem
+    key={i}
+    step={step}
+    index={i}
+    isOpen={openStepIndex === i}
+    onToggle={() => setOpenStepIndex(openStepIndex === i ? null : i)}
+  />
+))}
       </div>
     </>
   )} {/* Closing for VIEW_UNSPENT */}
