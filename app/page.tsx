@@ -261,6 +261,17 @@ const projectsData: Project[] = [
     link: "https://opensats.org/",
     linkLabel: "opensats.org",
     tags: ["Donation"],
+  },
+  {
+    title: "Unchained",
+    description: (
+      <>
+        Secure bitcoin in collaborative, multisig cold storage.
+      </>
+    ),
+    link: "https://unchained.com/",
+    linkLabel: "unchained.com",
+    tags: ["Product"],
   }
 ];
 
