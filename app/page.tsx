@@ -88,7 +88,7 @@ const projectsData: Project[] = [
     title: "Blockstream",
     description: (
       <>
-        A Bitcoin infrastructure company, developing products and services like the Liquid Network, Blockstream Satellite, Jade hardware wallet, and enterprise-grade mining operations.
+        A Bitcoin infrastructure company, developing the Liquid network, hardware wallets, and mining operations.
       </>
     ),
     link: "https://blockstream.com/",
