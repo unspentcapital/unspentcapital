@@ -228,6 +228,39 @@ const projectsData: Project[] = [
     link: "https://streetcyber.store/",
     linkLabel: "streetcyber.store",
     tags: ["Product"],
+  },
+  {
+    title: "Umbrel",
+    description: (
+      <>
+        Open source home cloud operating system. Store your files, download and stream media, run a Bitcoin node, and more — all in your home.
+      </>
+    ),
+    link: "https://umbrel.com/",
+    linkLabel: "umbrel.com",
+    tags: ["Product"],
+  },
+  {
+    title: "Good Morning Bitcoin",
+    description: (
+      <>
+        Internet radio station focused on Bitcoin content.
+      </>
+    ),
+    link: "https://goodmorningbitcoin.com/",
+    linkLabel: "goodmorningbitcoin.com",
+    tags: ["Donation"],
+  },
+  {
+    title: "OpenSats",
+    description: (
+      <>
+        A public charity which aims to fund Bitcoin-related free and open-source projects and associated education and research initiatives.
+      </>
+    ),
+    link: "https://opensats.org/",
+    linkLabel: "opensats.org",
+    tags: ["Donation"],
   }
 ];
 
