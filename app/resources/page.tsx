@@ -20,6 +20,15 @@ export default function ResourcesPage() {
         </li>
         {/* Add more resources here as needed */}
       </ul>
+  <footer className="mt-12 w-full max-w-7xl border-t border-brand-blue-dark/60 pt-6 flex justify-center">
+  <a
+    href="/"
+    className="px-6 py-3 bg-unspent-accent-primary text-unspent-text-on-accent rounded-lg font-semibold text-lg hover:bg-unspent-accent-primary-hover transition-all" // Updated button colors
+  >
+    Unspent Capital
+  </a>
+</footer>
     </main>
+    
   );
 }

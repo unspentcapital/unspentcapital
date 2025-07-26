@@ -512,13 +512,22 @@ const [openStepIndex, setOpenStepIndex] = useState<number | null>(0); // or `nul
         </div> {/* This div now closes after both UNSPENT and SPENT conditional blocks */}
       </div> {/* This is the closing div for "flex flex-col items-center justify-center flex-grow w-full max-w-7xl" */}
       <footer className="mt-12 w-full max-w-7xl border-t border-brand-blue-dark/60 pt-6 flex justify-center">
-  <a
-    href="/contact"
-    className="px-6 py-3 bg-unspent-accent-primary text-unspent-text-on-accent rounded-lg font-semibold text-lg hover:bg-unspent-accent-primary-hover transition-all" // Updated button colors
-  >
-    Contact
-  </a>
+  <div className="flex space-x-4">
+    <a
+      href="/contact"
+      className="px-6 py-3 bg-unspent-accent-primary text-unspent-text-on-accent rounded-lg font-semibold text-lg hover:bg-unspent-accent-primary-hover transition-all"
+    >
+      Contact
+    </a>
+    <a
+      href="/resources"
+      className="px-6 py-3 bg-unspent-accent-primary text-unspent-text-on-accent rounded-lg font-semibold text-lg hover:bg-unspent-accent-primary-hover transition-all"
+    >
+      Resources
+    </a>
+  </div>
 </footer>
+
     </div>
   );
 }
