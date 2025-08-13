@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import FiatTicker from "./FiatTicker";
+import SiteAudio from "@/components/SiteAudio";
 
 // --- Constants for View State ---
 const VIEW_UNSPENT = "unspent";
@@ -511,6 +512,14 @@ const [openStepIndex, setOpenStepIndex] = useState<number | null>(0); // or `nul
           )}
         </div> {/* This div now closes after both UNSPENT and SPENT conditional blocks */}
       </div> {/* This is the closing div for "flex flex-col items-center justify-center flex-grow w-full max-w-7xl" */}
+       <section className="mt-8 flex justify-center">
+      <SiteAudio
+        src="/slides/Unspent-Capital.m4a" // not "public\\slides\\..."; use forward slashes
+        title="Introduction"
+        poster="/b.png"
+        // poster="/images/unspent-cover.jpg" // optional
+      />
+    </section>
       <footer className="mt-12 w-full max-w-7xl border-t border-brand-blue-dark/60 pt-6 flex justify-center">
   <div className="flex space-x-4">
     <a
@@ -525,6 +534,7 @@ const [openStepIndex, setOpenStepIndex] = useState<number | null>(0); // or `nul
     >
       Resources
     </a>
+    
   </div>
 </footer>
 

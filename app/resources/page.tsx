@@ -9,13 +9,18 @@ export default function ResourcesPage() {
       
       <ul className="list-disc list-inside">
         <li>
+          <Link href="/slides/Unspent-Capital.m4a" target="_blank" className="text-blue-500 hover:underline">
+            Introduction to Unspent Capital (Audio)
+          </Link>
+        </li>
+        <li>
           <Link href="/slides/Unspent-Capital-Presentation.pdf" target="_blank" className="text-blue-500 hover:underline">
-            Presentation Slides (PDF)
+            Presentation Slides
           </Link>
         </li>
         <li>
           <Link href="/slides/Unspent-Capital.mp4" target="_blank" className="text-blue-500 hover:underline">
-            Presentation Recording (MP4)
+            Presentation Recording (Video)
           </Link>
         </li>
         {/* Add more resources here as needed */}
